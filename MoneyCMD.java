@@ -19,16 +19,16 @@ public class MoneyCMD implements CommandExecutor {
     Player p = (Player)s;
     if (args.length == 0) {
       int money = moneyAPI.getMoney((OfflinePlayer)p).intValue();
-      p.sendMessage(Main.pre + "Du hast " + amount + "$ auf deinem Konto");
+      p.sendMessage("Du hast " + amount + "$ auf deinem Konto");
     } else if (args.length == 1) {
       OfflinePlayer t = Bukkit.getOfflinePlayer(args[0]);
       if (t.hasPlayedBefore()) {
-        p.sendMessage(Main.pre + "Der Spieler " + p.getName() + " hat " + amount + "$ auf seinem Konto!");
+        p.sendMessage("Der Spieler " + p.getName() + " hat " + amount + "$ auf seinem Konto!");
       } else {
-        p.sendMessage(Main.pre + "Spieler ist uns nicht bekannt!");
+        p.sendMessage(+ "Spieler ist uns nicht bekannt!");
       } 
     } else {
-      p.sendMessage(Main.pre + "nutze: /money <Spieler>");
+      p.sendMessage("nutze: /money <Spieler>");
     } 
     return false;
   }
