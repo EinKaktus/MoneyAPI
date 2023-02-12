@@ -12,23 +12,23 @@ import org.bukkit.entity.Player;
 public class MoneyCMD implements CommandExecutor {
   public boolean onCommand(CommandSender s, Command cmd, String label, String[] args) {
     if (!(s instanceof Player)) {
-      s.sendMessage("musst ein Spieler sein!");
+      s.sendMessage("Du musst ein Spieler sein!");
       return false;
     } 
     MoneyAPI moneyAPI = new MoneyAPI();
     Player p = (Player)s;
     if (args.length == 0) {
       int money = moneyAPI.getMoney((OfflinePlayer)p).intValue();
-      p.sendMessage(Main.pre + "hast + Main.pre + "deinem Konto!");
+      p.sendMessage(Main.pre + "Du hast " + amount + "$ auf deinem Konto");
     } else if (args.length == 1) {
       OfflinePlayer t = Bukkit.getOfflinePlayer(args[0]);
       if (t.hasPlayedBefore()) {
-        p.sendMessage(Main.pre + "Spieler + Main.pre + "hat + t.getName() + "seinem Konto!");
+        p.sendMessage(Main.pre + "Der Spieler " + p.getName() + " hat " + amount + "$ auf seinem Konto!");
       } else {
         p.sendMessage(Main.pre + "Spieler ist uns nicht bekannt!");
       } 
     } else {
-      p.sendMessage(Main.pre + "nutze: <Spieler>");
+      p.sendMessage(Main.pre + "nutze: /money <Spieler>");
     } 
     return false;
   }
