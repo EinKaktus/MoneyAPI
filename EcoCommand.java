@@ -23,19 +23,19 @@ public class EcoCommand implements CommandExecutor {
           try {
             amount = Integer.parseInt(args[1]);
           } catch (NumberFormatException e) {
-            p.sendMessage(Main.pre + "Zahl!");
+            p.sendMessage(Main.pre + "Ungültige Eingabe!");
             return true;
           } 
           moneyAPI.addMoney((OfflinePlayer)t, amount);
-          p.sendMessage(Main.pre + "wurden + Main.pre + "geinem Konto );
+          p.sendMessage(Main.pre + amount + "$ wurden deinem Konto hinzugefügt!");
         } else {
-          p.sendMessage(Main.pre + "Spieler ist );
+          p.sendMessage(Main.pre + "Spieler ist offline!");
         } 
       } else {
         p.sendMessage(Main.pre + "nutze: <give/remove> <Spieler> <Betrag>");
       } 
     } else {
-      p.sendMessage(Main.pre + "hast du );
+      p.sendMessage(Main.pre + "Dazu hast du keine Rechte!");
     } 
     return false;
   }
