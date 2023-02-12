@@ -1,3 +1,11 @@
+package de.kaktus.main.api;
+
+import de.kaktus.main.file.FileManager;
+import java.io.File;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+public class MoneyAPI {
   private FileManager fileManager = new FileManager();
   
   public Integer getMoney(OfflinePlayer player) {
@@ -27,3 +35,4 @@
       setMoney(player, 0);
     } 
   }
+}
