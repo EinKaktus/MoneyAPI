@@ -32,7 +32,7 @@ public class EcoCommand implements CommandExecutor {
           p.sendMessage("Spieler ist offline!");
         } 
       } else {
-        p.sendMessage("nutze: <give/remove> <Spieler> <Betrag>");
+        p.sendMessage("nutze: /eco <give/remove> <Spieler> <Betrag>");
       } 
     } else {
       p.sendMessage("Dazu hast du keine Rechte!");
