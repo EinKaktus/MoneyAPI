@@ -22,22 +22,22 @@ public class SendMoney implements CommandExecutor {
         try {
           amount = Integer.parseInt(args[1]);
         } catch (NumberFormatException e) {
-          p.sendMessage(Main.pre + "Zahl!");
+          p.sendMessage(Main.pre + "Ungültige Eingabe!");
           return true;
         } 
         if (moneyAPI.getMoney((OfflinePlayer)p).intValue() >= amount) {
           moneyAPI.removeMoney((OfflinePlayer)p, amount);
           moneyAPI.addMoney((OfflinePlayer)t, amount);
-          p.sendMessage(Main.pre + "hast dem Spieler + Main.pre + " " + t.getName() + ");
-          t.sendMessage(Main.pre + "Spieler + Main.pre + "hat dir + p.getName() + ");
+          p.sendMessage("Du hast " + t.getName() + "" + amount + "$ gegeben!");
+          t.sendMessage(p.getName() + " hat dir " + amount + "$ gegeben!");
         } else {
-          p.sendMessage(Main.pre + "hast nicht genug Guthaben!");
+          p.sendMessage("Du hast nicht genug Guthaben!");
         } 
       } else {
-        p.sendMessage(Main.pre + "Spieler ist nicht online!");
+        p.sendMessage( "Spieler ist nicht online!");
       } 
     } else {
-      p.sendMessage(Main.pre + "nutze: <Spieler> <Betrag>");
+      p.sendMessage("nutze: /pay <Spieler> <Betrag>");
     } 
     return false;
   }
